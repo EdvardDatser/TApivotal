@@ -3,30 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>Tarkvara sõnad</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            margin: 50px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        input[type="button"] {
+            background-color: #007bff;
+            color: white; 
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        #random-sona, #random-sonavene {
+            margin-top: 10px;
+            font-style: italic;
+        }
+        #vastus, #vastusvene {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
     <script src="TApivotalScript.js"></script>
 </head>
 <body>
-<h1 style="text-align: center">Tarkvara sõnad</h1>
+<h1>Tarkvara sõnad</h1>
 <!-- Loomine tabel -->
-<table style="background-color: antiquewhite;border: black 10px;border-spacing: 20px; margin-left: 300px; margin-right: 300px">
-    <!-- 1. veerung kus on Eesti-Vene sõnastik -->
-    <td title="Eesti-Vene" style="border: black 5px">
-        <h2>Eesti-vene</h2>
-        <input type="button" value="Random" onclick="randomSonad()">
-        <div id="random-sona"></div>
-        <label for="kontroll">Kirjuta sõna vene keeles</label>
-        <input type="text" id="kontroll" onchange="kontrollima()">
-        <div id="vastus"></div>
-    </td>
-    <!-- 2. veerung kus on Vene-Eesti sõnastik -->
-    <td title="Vene-Eesti" style="border: black 5px">
-        <h2>Vene-Eesti</h2>
-        <input type="button" value="Random" onclick="randomSonadvene()">
-        <div id="random-sonavene"></div>
-        <label for="kontrollvene">Kirjuta sõna eesti keeles</label>
-        <input type="text" id="kontrollvene" onchange="kontrollimavene()">
-        <div id="vastusvene"></div>
-    </td>
+<table>
+    <tr>
+        <!-- 1. veerung kus on Eesti-Vene sõnastik -->
+        <td title="Eesti-Vene">
+            <h2>Eesti-vene</h2>
+            <input type="button" value="Random" onclick="randomSonad()">
+            <div id="random-sona"></div>
+            <label for="kontroll">Kirjuta sõna vene keeles</label>
+            <input type="text" id="kontroll" onchange="kontrollima()">
+            <div id="vastus"></div>
+        </td>
+        <!-- 2. veerung kus on Vene-Eesti sõnastik -->
+        <td title="Vene-Eesti">
+            <h2>Vene-Eesti</h2>
+            <input type="button" value="Random" onclick="randomSonadvene()">
+            <div id="random-sonavene"></div>
+            <label for="kontrollvene">Kirjuta sõna eesti keeles</label>
+            <input type="text" id="kontrollvene" onchange="kontrollimavene()">
+            <div id="vastusvene"></div>
+        </td>
+    </tr>
 </table>
 </body>
 </html>
